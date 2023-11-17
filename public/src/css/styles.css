@@ -18,4 +18,8 @@ ul.dogs-list li::before {
     margin-right: 5px;
 }
 
+ul.nav-list li::before {
+    content: url('../../icones/book.svg');
+    margin-right: 5px;
+}
 
