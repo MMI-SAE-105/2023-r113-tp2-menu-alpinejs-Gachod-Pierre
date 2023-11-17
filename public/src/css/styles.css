@@ -8,3 +8,8 @@ ul {
     padding: 0;
 }
 
+ul.cats-list li::before {
+    content: url('../../icones/animal-cat-24-regular.svg');
+    margin-right: 5px;
+}
+
