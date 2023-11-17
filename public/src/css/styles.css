@@ -13,3 +13,9 @@ ul.cats-list li::before {
     margin-right: 5px;
 }
 
+ul.dogs-list li::before {
+    content: url('../../icones/animal-dog-16-regular.svg');
+    margin-right: 5px;
+}
+
+
