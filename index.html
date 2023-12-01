@@ -28,8 +28,8 @@
       <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header_menuBtn">
         menu
       </button>
-      <a href="/fr/index.html"><button>accueil FR</button></a>
-      <a href="/en/index.html"><button>Home EN</button></a>
+      <a href="/fr/index.html"><button onclick="document.cookie = `nf_lang=fr; path=/ ; SameSite=Strict`">accueil FR</button></a>
+      <a href="/en/index.html"><button onclick="document.cookie = `nf_lang=en; path=/ ; SameSite=Strict`">Home EN</button></a>
 
       <h1>Page d'accueil</h1>
       <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
