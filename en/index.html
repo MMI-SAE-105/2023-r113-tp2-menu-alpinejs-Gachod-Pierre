@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test menu</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <link rel="stylesheet" href="./public/src/css/styles.css">
+    <style>
+    .menu {
+    position: fixed; /* reste en place lors du défilement */ top: 0; /* fixe le menu en haut de la page */
+    left: 0;
+    width: 100vw; /* largeur de la fenêtre */
+    height: 100vh; /* hauteur de la fenêtre */
+    background: #fff; /* couleur de fond */
+    display: grid; /* grille (pour centrer) */ place-content: center; /* alignement au centre (V et H) */ }
+    .header_menuBtn {
+    position: relative; /* pour appliquer z-index */ z-index: 10; /* pour que le bouton soit au dessus du menu */
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- https://emmet.io/ -->
+    <!-- header>h1{Test de menu} -->
+    <header>
+      <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header_menuBtn">
+        menu
+      </button>
+      <a href="/fr/index.html"><button>accueil FR</button></a>
+      <a href="/en/index.html"><button>Home EN</button></a>
+
+      <h1>Homepage</h1>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul class="nav-list">
+          <li><a href="cats/index.html">Cats</a></li>
+          <li><a href="dogs/index.html">Dogs</a></li>
+          <li><a href="#">item 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- h2>lorem2^p>lorem -->
+    <h2>Lorem, ipsum.</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+      mollitia adipisci alias error laboriosam numquam incidunt magni eum eos
+      nemo aliquid pariatur quam voluptates animi laudantium, aperiam
+      consectetur nobis enim.
+    </p>
+
+    <dl x-data="{ddIsOpen:false}">
+      <dt @click="ddIsOpen = ! ddIsOpen" class="fstdd_Btn">Lorem.</dt>
+      <dd x-show="ddIsOpen" x-transition.duration.800ms class="fstdd_Btn">Lorem ipsum dolor sit amet.</dd>
+    </dl>
+    <dl  x-data="{ddIsOpen:false}">
+      <dt @click="ddIsOpen = ! ddIsOpen" class="fstdd_Btn">Facilis?</dt>
+      <dd x-show="ddIsOpen" x-transition.duration.800ms class="fstdd_Btn">Error eveniet eos aperiam enim?</dd>
+    </dl>
+    <dl  x-data="{ddIsOpen:false}">
+      <dt @click="ddIsOpen = ! ddIsOpen" class="fstdd_Btn">Libero!</dt>
+      <dd x-show="ddIsOpen" x-transition.duration.800ms class="fstdd_Btn">Incidunt, deserunt exercitationem. Placeat, voluptate.</dd>
+    </dl>
+
+  </body>
+</html>
